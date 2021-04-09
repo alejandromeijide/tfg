@@ -29,7 +29,7 @@ public class Voto {
 //
 //	public void setUsuario(Usuario usuario) {
 //		this.usuario = usuario;
-//	}
+//	}<
 //
 //	public Funcionalidad getFuncionalidad() {
 //		return funcionalidad;

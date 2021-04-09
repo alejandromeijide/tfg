@@ -81,8 +81,8 @@ public class UsuarioManager {
 	}
 
 	public List<Usuario> obtenerUsuarios() {
-		//return (List<Usuarios>)usuariosRepository.findAll();
-		return null;
+		return (List<Usuario>)usuariosRepository.findAll();
+		//return null;
 	}
 
 }
