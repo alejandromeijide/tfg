@@ -22,7 +22,7 @@ public class FuncionalidadManager {
 		}
 		return true;
 	}
-
+ 
 	public Funcionalidad patchFuncionalidad(@PathVariable FuncionalidadCommand funcionalidadesCommand) {
 		Funcionalidad funcionalidad = null;
 

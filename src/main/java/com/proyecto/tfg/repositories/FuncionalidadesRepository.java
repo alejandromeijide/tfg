@@ -11,3 +11,4 @@ import com.proyecto.tfg.entities.Funcionalidad;
 public interface FuncionalidadesRepository extends CrudRepository<Funcionalidad, Long> {
 	public List<Funcionalidad> findByNombre(String nombre);
 }
+ 

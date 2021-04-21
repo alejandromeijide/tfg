@@ -1,4 +1,4 @@
-package com.proyecto.tfg.entities;
+package com.proyecto.tfg.entities; 
 
 import java.util.List;
 

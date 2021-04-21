@@ -26,7 +26,7 @@ public class UsuarioManager {
 		usuarios.setVotos_asignados(usuariosCommand.getVotos_asignados());
 		usuarios.setIdioma(usuariosCommand.getIdioma());
 		usuarios.setCondicion(usuariosCommand.getCondicion());
-		usuarios.setEmpresa_id(usuariosCommand.getEmpresa_id());
+		usuarios.setEmpresa_id(usuariosCommand.getEmpresa_id()); 
 		
 		return usuariosCommand;
 	}

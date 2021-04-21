@@ -14,3 +14,4 @@ public Usuario findById(Integer id);
 	public Usuario findByIdAndCodigo(Integer id, Integer codigo);
 
 }
+ 

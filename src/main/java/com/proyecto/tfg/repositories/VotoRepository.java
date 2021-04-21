@@ -7,3 +7,4 @@ import com.proyecto.tfg.entities.Voto;
 public interface VotoRepository extends CrudRepository<Voto, Long> {
 	
 }
+ 

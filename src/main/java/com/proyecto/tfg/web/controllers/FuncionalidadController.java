@@ -62,7 +62,7 @@ public class FuncionalidadController {
 		} catch (Exception e) {
 			return RESPONSE_KO;
 		}
-		return RESPONSE_OK;
+		return RESPONSE_OK; 
 	}
 
 }

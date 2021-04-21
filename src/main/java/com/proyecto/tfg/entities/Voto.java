@@ -7,7 +7,7 @@ import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Voto {
-
+ 
 	@Id
 	@GeneratedValue(generator = "serial")
 	@SequenceGenerator(name = "serial", sequenceName = "serial", allocationSize = 1)

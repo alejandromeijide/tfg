@@ -29,7 +29,7 @@ public class VotoController {
 	FuncionalidadManager funcionalidadesManager;
 	@Autowired 
 	UsuarioManager usuariosManager;
-
+ 
 
 	@RequestMapping(value = "/votar")
 	public ModelAndView handleRequest(Model model, @PathVariable Funcionalidad client) {
