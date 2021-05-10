@@ -23,7 +23,7 @@ public class UsuarioManager {
 		usuarios.setEmail(usuariosCommand.getEmail());
 		usuarios.setEmpresa(usuariosCommand.getEmpresa());
 		usuarios.setId_rol(usuariosCommand.getId_rol());
-		usuarios.setVotos_asignados(usuariosCommand.getVotos_asignados());
+		usuarios.setVotos_restantes(usuariosCommand.getVotos_restantes());
 		usuarios.setIdioma(usuariosCommand.getIdioma());
 		usuarios.setCondicion(usuariosCommand.getCondicion());
 		usuarios.setEmpresa_id(usuariosCommand.getEmpresa_id()); 
@@ -58,7 +58,7 @@ public class UsuarioManager {
 		usuarios.setEmail(usuariosCommand.getEmail());
 		usuarios.setEmpresa(usuariosCommand.getEmpresa());
 		usuarios.setId_rol(usuariosCommand.getId_rol());
-		usuarios.setVotos_asignados(usuariosCommand.getVotos_asignados());
+		usuarios.setVotos_restantes(usuariosCommand.getVotos_restantes());
 		usuarios.setIdioma(usuariosCommand.getIdioma());
 		usuarios.setCondicion(usuariosCommand.getCondicion());
 		usuarios.setEmpresa_id(usuariosCommand.getEmpresa_id());
@@ -84,6 +84,18 @@ public class UsuarioManager {
 		return (List<Usuario>)usuariosRepository.findAll();
 		//return null;
 	}
+	
+ 	public void asignarVotosRestantes(Usuario usuario, Integer votosRestantes) {
+ 		usuario.setVotos_restantes(votosRestantes);
+ 		usuariosRepository.save(usuario);
+ 	}
+ 	
+ 	public void asignarVotosEmitidos(Usuario usuario, Integer votosRestantes) {
+ 		usuario.setVotos_restantes(votosRestantes);
+ 		usuariosRepository.save(usuario);
+ 	}
+ 	
+ 	
 
 }
 

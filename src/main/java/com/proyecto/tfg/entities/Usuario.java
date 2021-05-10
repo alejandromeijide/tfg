@@ -23,7 +23,7 @@ public class Usuario {
 	private String email;
 	private String empresa;
 	private Integer id_rol;
-	private Integer votos_asignados;
+	private Integer votos_restantes;
 	private String idioma;
 	private Boolean condicion;
 	private Integer empresa_id;
@@ -33,13 +33,13 @@ public class Usuario {
 	}
 
 	public Usuario(String nombre, String password, String email, String empresa, Integer id_rol,
-			Integer votos_asignados, String idioma) {
+			Integer votos_restantes, String idioma) {
 		this.nombre = nombre;
 		this.password = password;
 		this.email = email;
 		this.empresa = empresa;
 		this.id_rol = id_rol;
-		this.votos_asignados = votos_asignados;
+		this.votos_restantes = votos_restantes;
 		this.idioma = idioma;
 
 	}
@@ -68,8 +68,8 @@ public class Usuario {
 		this.id_rol = id_rol;
 	}
 
-	public void setVotos_asignados(Integer votos_asignados) {
-		this.votos_asignados = votos_asignados;
+	public void setVotos_restantes(Integer votos_restantes) {
+		this.votos_restantes = votos_restantes;
 	}
 
 	public void setIdioma(String idioma) {
@@ -108,8 +108,8 @@ public class Usuario {
 		return id_rol;
 	}
 
-	public Integer getVotos_asignados() {
-		return votos_asignados;
+	public Integer getVotos_restantes() {
+		return votos_restantes;
 	}
 
 	public String getIdioma() {

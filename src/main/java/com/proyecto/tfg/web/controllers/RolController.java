@@ -22,6 +22,7 @@ protected final Log logger = LogFactory.getLog(getClass());
 	UsuarioManager usuariosManager;
 
 
+	@secur
 	@RequestMapping(value = "/rol/{rol}")
 	public ModelAndView handleRequest(Model model, @PathVariable Rol rol) {
 		
