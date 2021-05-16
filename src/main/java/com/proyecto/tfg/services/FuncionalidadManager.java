@@ -8,13 +8,18 @@ import com.proyect.tfg.command.FuncionalidadCommand;
 import com.proyecto.tfg.entities.Funcionalidad;
 import com.proyecto.tfg.repositories.FuncionalidadesRepository;
 
+import org.apache.log4j.Logger;
+import java.text.MessageFormat;
 @Service
 public class FuncionalidadManager {
+	
+	 private final Logger logger = Logger.getLogger(this.getClass());
 	
 	@Autowired
 	private FuncionalidadesRepository funcionalidadesRepository;
 
 	public boolean deleteFuncionalidad(@PathVariable Funcionalidad funcionalidad) {
+		 logger.debug("Método borrar funcionalidad");
 		try {
 			funcionalidadesRepository.delete(funcionalidad);
 		} catch (Exception e) {
@@ -24,6 +29,7 @@ public class FuncionalidadManager {
 	}
  
 	public Funcionalidad patchFuncionalidad(@PathVariable FuncionalidadCommand funcionalidadesCommand) {
+		logger.debug("Método patchfuncionalidad");
 		Funcionalidad funcionalidad = null;
 
 		// Creacion
@@ -36,6 +42,7 @@ public class FuncionalidadManager {
 	}
 	
 	public Funcionalidad putFuncionalidad(@PathVariable FuncionalidadCommand funcionalidadesCommand) {
+		logger.debug("Método putfuncionalidad");
 		Funcionalidad funcionalidad = null;
 		// Creacion
 		funcionalidad = new Funcionalidad();
@@ -48,6 +55,7 @@ public class FuncionalidadManager {
 	
 	
 	public Iterable<Funcionalidad> obtenerFuncionalidades() {
+		logger.debug("Método obtener lista funcionalidades");
 		return funcionalidadesRepository.findAll();
 	}
 

@@ -10,8 +10,9 @@ import com.proyecto.tfg.entities.Usuario;
 //import com.proyecto.tfg.entities.Product;
 import com.proyecto.tfg.repositories.UsuarioRepository;
 import com.proyect.tfg.command.UsuarioCommand;
-
+import org.apache.log4j.Logger;
 public class UsuarioManager {
+	 private final Logger logger = Logger.getLogger(this.getClass());
 	@Autowired
 	private UsuarioRepository usuariosRepository;
 
@@ -32,17 +33,20 @@ public class UsuarioManager {
 	}
 	
 	public Usuario buscarUsuariosById(Integer id) {
+		 logger.debug(" Método buscar Usuarios por id");
 //		return usuariosRepository.findById(id);
 		return null;
 	}
 
 	public Usuario buscarUsuariosByCodigo(Integer codigo) {
+		logger.debug(" Método buscar Usuarios por codigo");
 //		return usuariosRepository.findByCodigo(codigo);
 		return null;
 	}
 
 //	@Transactional
 	public Usuario guardarClient(UsuarioCommand usuariosCommand) {
+		logger.debug(" Método guardar cliente");
 		Usuario usuarios = null;
 		if(usuariosCommand.getId_usuario() == null) {
 			usuarios = new Usuario();
@@ -70,6 +74,7 @@ public class UsuarioManager {
 
 	//@Transactional
 	public boolean eliminarUsuarios(Usuario usuarios) {
+		logger.debug(" Método para eliminar Usuarios");
 		try {
 			//usuariosRepository.delete(usuarios);
 		} catch (Exception e) {
@@ -81,16 +86,19 @@ public class UsuarioManager {
 	}
 
 	public List<Usuario> obtenerUsuarios() {
+		logger.debug(" Método para obtener lista de Usuaios");
 		return (List<Usuario>)usuariosRepository.findAll();
 		//return null;
 	}
 	
  	public void asignarVotosRestantes(Usuario usuario, Integer votosRestantes) {
+ 		logger.debug(" Método asignar votos restantes");
  		usuario.setVotos_restantes(votosRestantes);
  		usuariosRepository.save(usuario);
  	}
  	
  	public void asignarVotosEmitidos(Usuario usuario, Integer votosRestantes) {
+ 		logger.debug(" Método asignar votos emitidos");
  		usuario.setVotos_restantes(votosRestantes);
  		usuariosRepository.save(usuario);
  	}

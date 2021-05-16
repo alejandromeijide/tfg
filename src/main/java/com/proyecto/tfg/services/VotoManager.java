@@ -52,7 +52,9 @@ public class VotoManager {
 		 voto.setFuncionalidad(funcionalidad);
 		 voto.setUsuario(usuario); 
 		 //2.Mantener los votos usuario(restar)
-		 restarVotoUsuario
+		 
+		 
+		 restarVotoUsuario(usuario); //preguntar
 		 
 		 
 //	      
