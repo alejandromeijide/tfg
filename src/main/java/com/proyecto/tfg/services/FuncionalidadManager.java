@@ -23,6 +23,8 @@ public class FuncionalidadManager {
 		try {
 			funcionalidadesRepository.delete(funcionalidad);
 		} catch (Exception e) {
+			logger.error (e.getMessage (), e);
+			e.printStackTrace();
 			return false;
 		}
 		return true;

@@ -13,12 +13,14 @@ import com.proyecto.tfg.entities.Voto;
 import com.proyecto.tfg.repositories.FuncionalidadesRepository;
 import com.proyecto.tfg.repositories.UsuarioRepository;
 import com.proyecto.tfg.repositories.VotoRepository;
+import org.apache.log4j.Logger;
 
 
 //import com.proyecto.tfg.web.controllers.ListaVotos;
 
 public class VotoManager {
 	
+	private final Logger logger = Logger.getLogger(this.getClass());
 	@Autowired
 
 	private VotoRepository votoRepository;
@@ -26,7 +28,6 @@ public class VotoManager {
 	@Autowired
 	FuncionalidadManager funcionalidadManager;
 
-	
 	@Autowired
 	private Usuario usuario;
 	@Autowired
@@ -39,7 +40,7 @@ public class VotoManager {
 
 	
 	public Iterable<Voto> obtenerVotos() {
-	
+		 logger.debug(" Método para obtener votos");
 		
 		return votoRepository.findAll();
 	}
@@ -47,8 +48,9 @@ public class VotoManager {
 	
 	 public void realizarVotación(Funcionalidad funcionalidad, Usuario usuario) throws IllegalArgumentException{ 
 		 // 1.crear voto
-		 Voto voto = new Voto();
+		 logger.debug(" Método para realizar la votación");
 		 
+		 Voto voto = new Voto();
 		 voto.setFuncionalidad(funcionalidad);
 		 voto.setUsuario(usuario); 
 		 //2.Mantener los votos usuario(restar)
@@ -57,13 +59,14 @@ public class VotoManager {
 		 restarVotoUsuario(usuario); //preguntar
 		 
 		 
-//	      
 //	       // for (Funcionalidad f:listaFun) {
 //	            
 //	        	
 //	        
 	    }
 	 	public void restarVotoUsuario(Usuario usuario) {
+	 		
+	 		logger.debug(" Método para restar votoUsuario   ");
 	 		Integer v= usuario.getVotos_restantes();
 	 
 	 		usuario.setVotos_restantes(v-1) ;
@@ -71,9 +74,6 @@ public class VotoManager {
 	 		usuariosRepository.save(usuario);
 	 		
 	 	}
-	    
-	
 	    //return funcionalidadManager.obtenerFuncionalidades();
-
 }
  

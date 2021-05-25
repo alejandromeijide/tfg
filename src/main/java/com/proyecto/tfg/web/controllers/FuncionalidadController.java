@@ -47,6 +47,9 @@ public class FuncionalidadController {
 			// validar
 			funcionalidadManager.putFuncionalidad(null);
 		} catch (Exception e) {
+			logger.error (e.getMessage (), e);
+			e.printStackTrace();
+			
 			return RESPONSE_KO;
 		}
 		return RESPONSE_OK;
@@ -60,6 +63,9 @@ public class FuncionalidadController {
 			// validar
 			funcionalidadManager.patchFuncionalidad(null);
 		} catch (Exception e) {
+			logger.error (e.getMessage (), e);
+			e.printStackTrace();
+			
 			return RESPONSE_KO;
 		}
 		return RESPONSE_OK; 

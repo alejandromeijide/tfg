@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.proyecto.tfg.entities.Funcionalidad;
+import com.proyecto.tfg.entities.Usuario;
 import com.proyecto.tfg.entities.Voto;
 import com.proyecto.tfg.services.FuncionalidadManager;
 import com.proyecto.tfg.services.UsuarioManager;
@@ -36,23 +37,23 @@ public class VotoController {
 	UsuarioManager usuariosManager;
 	
 	@Autowired 
+	UsuarioController usuarioController;
+	
+	@Autowired 
 	VotoManager votoManager;
 	
 	
  
-
-	@RequestMapping(value = "/votar")
-	public ModelAndView handleRequest(Model model, @PathVariable Funcionalidad client) {
-		
-		
-		
 	
-		//ClientCommand clientCommand = clientManager.clientToClientCommand(client);
-		//List<Product> obtenerProductos = client.getProducts();
-		
-		
-		return new ModelAndView("/WEB-INF/views/mostrarproductos.jsp");
+	@RequestMapping(value = "/votar", method = RequestMethod.DELETE)
+	public @ResponseBody void deleteFuncionalidad(@PathVariable Funcionalidad funcionalidad, Usuario usuario) {
+		logger.info("deleteFuncionalidad" + funcionalidad.getId());
+		 votoManager.realizarVotación(funcionalidad, usuario);
+		 //preguntar Raúl si cambiar este método y el de realizar votacion a String.
 	}
+	
+	
+	
 	
 	@RequestMapping(value = "/get-lista-votos", method = RequestMethod.GET)
 	public @ResponseBody Iterable<Voto> getVotos() {

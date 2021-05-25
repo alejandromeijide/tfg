@@ -1,5 +1,6 @@
 package com.proyecto.tfg.services;
 
+import java.text.MessageFormat;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +55,8 @@ public class UsuarioManager {
 			//client.setId(++id);
 		}
 		else {
-			//usuarios = usuariosRepository.findById(usuariosCommand.getId_usuario());
+			   logger.warn("El id de susario ya existe por lo tanto buscamos el usuario");
+			usuarios = usuariosRepository.findById(usuariosCommand.getId_usuario());
 		}
 		
 		usuarios.setNombre(usuariosCommand.getNombre());
@@ -74,11 +76,14 @@ public class UsuarioManager {
 
 	//@Transactional
 	public boolean eliminarUsuarios(Usuario usuarios) {
+		String message;
 		logger.debug(" Método para eliminar Usuarios");
 		try {
-			//usuariosRepository.delete(usuarios);
+			
+			 usuariosRepository.delete(usuarios);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			logger.error (e.getMessage (), e);
 			e.printStackTrace();
 			return false;
 		}
